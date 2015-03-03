@@ -13,13 +13,13 @@ Conversion Gregorian date to Solar.
 
 مبدل تاریخ میلادی وردپرس به خورشیدی
 
-تنها افزونه مبدل توابع مهم:
+تنها افزونه مبدل توابع مهم
 *  mysql2date 
 *  get_the_modified_date
 *  get_post_modified_time
 
 
-ویژگی‌ها:
+ویژگی‌ها
 *  فارسی ساز وردپرس 
 *  مبدل توابع مهم تاریخ
 *  تبدیل توابع اعداد به فارسی
@@ -29,12 +29,10 @@ Conversion Gregorian date to Solar.
 *  مکمل و سازگار با افزونه‌های مشابه
 
 
-
 این پلاگین از دو ویجت تقویم و بایگانی و پیوندیکتا خورشیدی پشتیبانی نمی‌کند
 در صورت نیاز میتوانید از امکانات پلاگین‌های جلالی و پارسی‌دیت در کنار این پلاگین استفاده کنید
 wp-jalali, wp-parsidate
 
-==============================================================
 
 wp date time iran jalali shamsi hijri hejri calendar gregorian conversion khorshidi solar persian parsi farsi RTL fa-IR شمسی خورشیدی تاریخ تقویم هجری جلالی مبدل پلاگین افزونه وردپرس فارسی پارسی ایران
 
