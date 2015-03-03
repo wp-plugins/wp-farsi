@@ -1,6 +1,6 @@
 ﻿=== WP-Farsi ===
 Contributors: Ali.Dbg
-Tags: wp, date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,conversion,khorshidi,solar,persian,parsi,farsi,RTL,fa-IRشمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران,
+Tags: wp, date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,conversion,khorshidi,solar,persian,parsi,farsi,RTL,fa-IR شمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران
 Requires at least: 3.0.1
 Tested up to: 4.1
 Stable tag: 4.0
