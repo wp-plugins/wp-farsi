@@ -46,6 +46,11 @@ Conversion Gregorian date to Solar.
 
 wp-jalali, wp-parsidate
 
+==============================================================
+
+wp date time iran jalali shamsi hijri hejri calendar gregorian conversion khorshidi solar persian parsi farsi RTL fa-IR شمسی خورشیدی تاریخ تقویم هجری جلالی مبدل پلاگین افزونه وردپرس فارسی پارسی ایران
+
+
 == Installation ==
 
 آموزش نصب افزونه
