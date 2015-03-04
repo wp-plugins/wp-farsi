@@ -5,7 +5,7 @@
 	Description: افزونه مبدل تاریخ میلادی به شمسی، مکمل و سازگار با افزونه‌های مشابه. 
 	Author: Ali.Dbg
 	Author URI: https://github.com/alidbg/wp-farsi
-	Version: 1.1
+	Version: 1.2
 	License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */ 
 
@@ -22,8 +22,8 @@ if(extension_loaded('mbstring')){
 
 require_once plugin_dir_path( __FILE__ ) . 'pdate.php';
 
-function num2fa($str,$cur=false){
- 	return str_replace(preg_split("//u","0123456789/,",12,1),preg_split("//u","۰۱۲۳۴۵۶۷۸۹٫".($cur?'٬':'،'),12,1),$str);
+function num2fa($str){
+ 	return str_replace(preg_split("//u","0123456789",10,1),preg_split("//u","۰۱۲۳۴۵۶۷۸۹",10,1),$str);
 }
 
 function download_faIR(){
@@ -85,7 +85,7 @@ function wpfa_load(){
 	if(get_option('wpfa_nums') === false) add_option('wpfa_nums', 'on');
 	if(get_option('wpfa_nums') == "on"){
 		add_filter('date_i18n', 'num2fa');
-		add_filter('number_format_i18n', create_function('$s','return num2fa($s,true);'));
+		add_filter('number_format_i18n', 'num2fa');
 	}
 }
 
