@@ -1,13 +1,13 @@
 ﻿=== WP-Farsi ===
 Contributors: Ali.Dbg
-Tags: wp,date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,language,translation,locale,mysql2date,date_i18n,conversion,khorshidi,solar,persian,parsi,farsi,RTL,fa_IR,fa-IR,شمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران,
+Tags: wp,date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,language,translation,locale,mysql2date,date_i18n,conversion,khorshidi,solar,persian,parsi,farsi,RTL,i18n,fa_IR,fa-IR,شمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران,
 Requires at least: 3.0.1
 Tested up to: 4.2
 Stable tag: 4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-تاریخ‌ شمسی, Conversion Gregorian date to Solar, time jalali persian parsi farsi RTL calendar wp plugin iran shamsi khorshidi hejri unicode
+تاریخ شمسی, Conversion Gregorian date to Solar, time jalali persian parsi farsi RTL calendar wp plugin iran shamsi khorshidi hejri unicode
 
 == Description ==
 
@@ -59,6 +59,11 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 `/assets/screenshot-1.png`
 
 == Changelog ==
+
+= 1.5 =
+* بهبود کتابخانه پی‌دیت
+* بهبود تبدیل اعداد به فارسی
+* و رفع اشکلات جزئی
 
 = 1.2 =
 * Improved the num2fa function 
