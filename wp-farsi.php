@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/wp-farsi
 Description: افزونه مبدل تاریخ میلادی به شمسی، مکمل و سازگار با افزونه‌های مشابه.
 Author: Ali.Dbg
 Author URI: https://github.com/alidbg/wp-farsi
-Version: 1.5
+Version: 1.6
 License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */ 
 
@@ -52,7 +52,7 @@ function wpfa_patch_func($patch = false){
 }
 
 function timestampdiv(){?>
-<script>jQuery(document).ready(function(){jQuery("#timestampdiv").html(function(a,b){
+<script>jQuery(document).ready(function(){jQuery("#timestampdiv,.timestamp-wrap,.hidden").html(function(a,b){
 var c=("۰,۱,۲,۳,۴,۵,۶,۷,۸,۹,01-Jan,02-Feb,03-Mar,04-Apr,05-May,06-Jun,07-Jul,08-Aug,09-Sep,10-Oct,11-Nov,12-Dec").split(","),
 d=("0,1,2,3,4,5,6,7,8,9,01-فرو,02-ارد,03-خرد,04-تیر,05-مرد,06-شهر,07-مهر,08-آبا,09-آذر,10-دی,11-بهم,12-اسف").split(",");
 jQuery.each(c,function(a,c){b=b.replace(new RegExp(c,"gi"),d[a])});return b});
