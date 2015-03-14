@@ -41,10 +41,14 @@ wp-jalali و wp-parsidate
 
 == Screenshots ==
 
-1.  تنظیم نمایش اعداد فارسی
 `/assets/screenshot-1.png`
+1.  تنظیم نمایش اعداد فارسی
+
 
 == Changelog ==
+
+= 1.7 =
+* Small improvements
 
 = 1.6 =
 * Fixed admin date editor
