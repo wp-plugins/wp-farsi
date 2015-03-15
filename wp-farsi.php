@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/wp-farsi
 Description: افزونه مبدل تاریخ میلادی به شمسی، مکمل و سازگار با افزونه‌های مشابه.
 Author: Ali.Dbg
 Author URI: https://github.com/alidbg/wp-farsi
-Version: 1.7
+Version: 1.8
 License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */
 
@@ -54,12 +54,16 @@ function wpfa_patch_func($patch = false) {
 }
 
 function timestampdiv() {?>
-<script>jQuery(document).ready(function(){jQuery("#timestampdiv,.timestamp-wrap,.hidden").html(function(a,b){
-var c=("۰,۱,۲,۳,۴,۵,۶,۷,۸,۹,01-Jan,02-Feb,03-Mar,04-Apr,05-May,06-Jun,07-Jul,08-Aug,09-Sep,10-Oct,11-Nov,12-Dec").split(","),
-d=("0,1,2,3,4,5,6,7,8,9,۰۱-فرو,۰۲-ارد,۰۳-خرد,۰۴-تیر,۰۵-مرد,۰۶-شهر,۰۷-مهر,۰۸-آبا,۰۹-آذر,۱۰-دی,۱۱-بهم,۱۲-اسف").split(",");
-jQuery.each(c,function(a,c){b=b.replace(new RegExp(c,"gi"),d[a])});return b});
-jQuery("#mm option[value='"+jQuery('#hidden_mm').val()+"']").attr("selected","selected")})</script>
-<?php
+<script type='text/javascript'>
+var c = ("۰,۱,۲,۳,۴,۵,۶,۷,۸,۹,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec").split(","),
+    d = ("0,1,2,3,4,5,6,7,8,9,فرو,ارد,خرد,تیر,مرد,شهر,مهر,آبا,آذر,دی,بهم,اسف").split(",");
+jQuery(document).ready(function(){
+    jQuery("#timestampdiv,.inline-edit-date,.timestamp-wrap").html(function(a,b){
+    jQuery.each(c,function(a,c){b=b.replace(new RegExp(c,'g'),d[a])});return b});
+    jQuery("#mm option[value='"+jQuery('#hidden_mm').val()+"']").attr("selected","selected")
+});
+</script>
+<?php 
 }
 
 function dreg_jsfa() {
@@ -68,9 +72,9 @@ function dreg_jsfa() {
     wp_dequeue_script('wpp_admin');
 }
 
-function wpfa_date_i18n($g , $f, $t) {
-	$d = wpfa_date($f,intval($t));
-	return WPFA_NUMS === "on" ? numbers_fa($d) : $d;
+function wpfa_date_i18n($g = '', $f = '', $t = '') {
+    $d = wpfa_date($f,intval($t));
+    return WPFA_NUMS === "on" ? numbers_fa($d) : $d;
 }
 
 function wpfa_load() {
@@ -86,8 +90,8 @@ function wpfa_load() {
 function wpfa_nums() {
     register_setting('general', 'wpfa_nums', 'esc_attr');
     add_settings_field('wpfa_nums', '<label for="wpfa_nums">ساختار اعداد</label>', create_function('', '
-		echo \'<label><input type="checkbox" name="wpfa_nums" ' . (WPFA_NUMS === "on" ? "checked" : "") . '/> 
-		<span>فارسی ۰۱۲۳۴۵۶۷۸۹</span></label>\';'), 'general');
+        echo \'<label><input type="checkbox" name="wpfa_nums" ' . (WPFA_NUMS === "on" ? "checked" : "") . '/> 
+        <span>فارسی ۰۱۲۳۴۵۶۷۸۹</span></label>\';'), 'general');
 }
 
 register_activation_hook(__FILE__, 'wpfa_activate');

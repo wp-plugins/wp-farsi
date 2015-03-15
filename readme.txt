@@ -1,13 +1,13 @@
 ﻿=== WP-Farsi ===
 Contributors: Ali.Dbg
-Tags:wp,date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,language,translation,locale,mysql2date,date_i18n,conversion,khorshidi,solar,persian,parsi,farsi,RTL,i18n,fa_IR,fa-IR,شمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران,
+Tags:wp,date,time,iran,jalali,shamsi,hijri,hejri,calendar,gregorian,language,translation,locale,mysql2date,date_i18n,conversion,khorshidi,solar,persian,parsi,farsi,RTL,i18n,fa_IR,fa-IR,شمسی,خورشیدی,تاریخ,تقویم,هجری,جلالی,مبدل,پلاگین,افزونه,وردپرس,فارسی,پارسی,ایران
 Requires at least: 3.0.1
 Tested up to: 4.2
 Stable tag: 4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-تاریخ شمسی, Conversion Gregorian date to Solar, time jalali persian parsi farsi RTL calendar wp plugin iran shamsi khorshidi hejri unicode
+تبدیل تاریخ میلادی وردپرس به شمسی Gregorian date to Solar, time jalali persian parsi farsi wp iran shamsi khorshidi hejri
 
 == Description ==
 
@@ -17,15 +17,12 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 + تبدیل اعداد انگلیسی به فارسی
 + رفع مشکل هاست با زبان و تاریخ
 + مکمل و سازگار با افزونه‌های مشابه
-+ بسیار سبک، پایدار و ایمن
++ بسیار سبک، سریع، پایدار و ایمن
 
-
-هم در کنار این پلاگین استفاده کرد
-wp-jalali و wp-parsidate 
+هم در کنار این پلاگین استفاده کنید
+wp-jalali, wp-parsidate 
 **توجه:**
- می‌توان از امکانات پلاگین‌های 
-
-
+میتوانید از امکانات پلاگین‌های
 
 == Installation ==
 
@@ -41,11 +38,12 @@ wp-jalali و wp-parsidate
 
 == Screenshots ==
 
-`/assets/screenshot-1.png`
-1.  تنظیم نمایش اعداد فارسی
-
+1. تنظیم نمایش اعداد فارسی  `/assets/screenshot-1.png` 
 
 == Changelog ==
+
+= 1.8 =
+* Minor fix
 
 = 1.7 =
 * Small improvements
