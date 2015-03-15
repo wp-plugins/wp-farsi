@@ -38,8 +38,8 @@ wp-jalali, wp-parsidate
 
 == Screenshots ==
 
-1. تنظیم نمایش اعداد فارسی 
-`/assets/screenshot-1.png` 
+`/assets/screenshot-1.png`
+1.  تنظیم نمایش اعداد فارسی
 
 == Changelog ==
 
