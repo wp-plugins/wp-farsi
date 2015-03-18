@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/wp-farsi
 Description: افزونه مبدل تاریخ میلادی به شمسی، مکمل و سازگار با افزونه‌های مشابه.
 Author: Ali.Dbg
 Author URI: https://github.com/alidbg/wp-farsi
-Version: 1.8.2
+Version: 2.0
 License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */
 
@@ -45,18 +45,22 @@ function wpfa_init() {
 }
 
 function wpfa_patch_func($patch = false) {
-    $source  = ABSPATH . 'wp-includes/functions.php';
-    $pattern = "else\n\t\treturn date( " . '$format, $i' . " );";
-    $replace = "else\n\t\treturn date_i18n( " . '$format, $i' . " );";
-    if (!$patch) list($replace, $pattern) = array($pattern,$replace);
-    if (is_readable($source) && is_writable($source))
-        file_put_contents($source, str_replace($pattern, $replace, file_get_contents($source)));
+    $f = ABSPATH . 'wp-includes/functions.php';
+    if (!is_writable($f)) return;
+    $re = "/(else\\s+return\\s+(date.*[(]))/";
+    $src = file_get_contents($f);
+    if (preg_match($re, $src, $match) === 1){
+      if ($match[2] === "date(" && $patch)
+         file_put_contents($f, str_replace($match[1], "else\n\t\treturn date_i18n(", $src));
+      elseif ($match[2] === "date_i18n(" && !$patch)
+         file_put_contents($f, str_replace($match[1], "else\n\t\treturn date(", $src));
+    }
 }
 
 function timestampdiv() {?>
 <script type='text/javascript'>
-var c = ("۰,۱,۲,۳,۴,۵,۶,۷,۸,۹,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec").split(","),
-    d = ("0,1,2,3,4,5,6,7,8,9,فرو,ارد,خرد,تیر,مرد,شهر,مهر,آبا,آذر,دی,بهم,اسف").split(",");
+var c = ("۰,۱,۲,۳,۴,۵,۶,۷,۸,۹,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec").split(",");
+var d = ("0,1,2,3,4,5,6,7,8,9,فرو,ارد,خرد,تیر,مرد,شهر,مهر,آبا,آذر,دی,بهم,اسف").split(",");
 jQuery(document).ready(function(){
     jQuery("#timestampdiv,.timestamp-wrap,.inline-edit-date,.jj,.mm,.aa,.hh,.mn,.ss").html(function(a,b){
     jQuery.each(c,function(a,c){b=b.replace(new RegExp(c,'g'),d[a])});return b});
@@ -67,9 +71,9 @@ jQuery(document).ready(function(){
 }
 
 function dreg_jsfa() {
-    wp_dequeue_script('ztjalali_reg_admin_js');
-    wp_dequeue_script('ztjalali_reg_date_js');
-    wp_dequeue_script('wpp_admin');
+    wp_deregister_script('ztjalali_reg_admin_js');
+    wp_deregister_script('ztjalali_reg_date_js');
+    wp_deregister_script('wpp_admin');
 }
 
 function wpfa_date_i18n($g = '', $f = '', $t = '') {

@@ -43,6 +43,9 @@ wp-jalali, wp-parsidate
 
 == Changelog ==
 
+= 2.0 =
+* Support WP 3.0.1 - 4.2
+
 = 1.8.2 =
 * Fixed a bug
 
