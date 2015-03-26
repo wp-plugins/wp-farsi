@@ -43,6 +43,9 @@ wp-jalali, wp-parsidate
 
 == Changelog ==
 
+= 2.0.1 =
+* Tiny modification
+
 = 2.0 =
 * Support WP 3.0.1 - 4.2
 
