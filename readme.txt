@@ -43,6 +43,10 @@ wp-jalali, wp-parsidate
 
 == Changelog ==
 
+= 2.4.0 =
+* Small improvements
+* Fixed Bugs
+
 = 2.3.3 =
 * Improved filter date
 * Improved Patch func
