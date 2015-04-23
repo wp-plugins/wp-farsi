@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/wp-farsi
 Description: مبدل تاریخ میلادی وردپرس به خورشیدی، فارسی ساز، مبدل اعداد انگلیسی به فارسی، رفع مشکل هاست با زبان و تاریخ، سازگار با افزونه‌های مشابه.
 Author: Ali.Dbg 😉
 Author URI: https://github.com/alidbg/wp-farsi
-Version: 2.4.0
+Version: 2.4.1
 License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */
 
@@ -58,7 +58,7 @@ function wpfa_apply_filters() {
         'date_i18n', 'get_post_time', 'get_comment_date', 'get_comment_time', 'get_the_date', 'the_date', 'get_the_time', 'the_time',
         'get_the_modified_date', 'the_modified_date', 'get_the_modified_time', 'the_modified_time', 'get_post_modified_time', 'number_format_i18n'
     ) as $i) remove_all_filters($i);
-    add_filter('date_i18n', 'wpfa_date_i18n', 10, 3);
+    if (!is_feed()) add_filter('date_i18n', 'wpfa_date_i18n', 10, 3);
     if (WPFA_NUMS === "on")
         add_filter('number_format_i18n', 'numbers_fa');
 }
