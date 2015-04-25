@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/wp-farsi
 Description: مبدل تاریخ میلادی وردپرس به خورشیدی، فارسی ساز، مبدل اعداد انگلیسی به فارسی، رفع مشکل هاست با زبان و تاریخ، سازگار با افزونه‌های مشابه.
 Author: Ali.Dbg 😉
 Author URI: https://github.com/alidbg/wp-farsi
-Version: 2.4.2
+Version: 2.4.3
 License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
 */
 
@@ -46,12 +46,7 @@ function wpfa_date_i18n( $g, $f, $t ) {
     return WPFA_NUMS === "on" ? numbers_fa($d) : $d;
 }
 
-function wpfa_date_i18n_( $g, $f, $t ) {
-    return date($f,$t);
-}
-
 function wpfa_apply_filters() {
-    global $wp_query;
     ini_set('default_charset', 'UTF-8');
     ini_set('date.timezone', 'UTC');
     if (extension_loaded('mbstring')) {
@@ -63,11 +58,7 @@ function wpfa_apply_filters() {
         'date_i18n', 'get_post_time', 'get_comment_date', 'get_comment_time', 'get_the_date', 'the_date', 'get_the_time', 'the_time',
         'get_the_modified_date', 'the_modified_date', 'get_the_modified_time', 'the_modified_time', 'get_post_modified_time', 'number_format_i18n'
     ) as $i) remove_all_filters($i);
-    if(isset($wp_query) and is_feed() === false)
-        add_filter('date_i18n', 'wpfa_date_i18n', 10, 3);
-    else
-        add_filter('date_i18n', 'wpfa_date_i18n_', 10, 3);
-
+    add_filter('date_i18n', 'wpfa_date_i18n', 10, 3);
     if (WPFA_NUMS === "on")
         add_filter('number_format_i18n', 'numbers_fa');
 }
@@ -95,7 +86,6 @@ function wpfa_admin(){
 wpfa_apply_filters();
 add_action('init', 'wpfa_init');
 add_action('admin_init', 'wpfa_admin');
-if(isset($wp_query) and is_feed() === false)
 add_action('wp_loaded', 'wpfa_apply_filters', 900);
 register_activation_hook( WPFA_FILE , 'wpfa_activate');
 register_deactivation_hook( WPFA_FILE , 'wpfa_patch_func');
